@@ -78,7 +78,7 @@ const inputLines = readInput(new URL('day-7-1.txt', import.meta.url))
     .split('\n')
     .filter(line => line !== '');
 
-const fileSystemRoot = buildFileSystem(inputLines);
+export const fileSystemRoot = buildFileSystem(inputLines);
 
 const nodesToTraverse = [fileSystemRoot];
 let sum = 0;
