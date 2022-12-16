@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/sroettering/AdventOfCode2022/issues"
   },
-  "homepage": "https://github.com/sroettering/AdventOfCode2022#readme"
+  "homepage": "https://github.com/sroettering/AdventOfCode2022#readme",
+  "dependencies": {
+    "@turf/helpers": "^6.5.0",
+    "@turf/intersect": "^5.1.6",
+    "@turf/union": "^5.1.5"
+  }
 }
