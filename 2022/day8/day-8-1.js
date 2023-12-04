@@ -1,4 +1,4 @@
-import { readInput } from '../helpers/read-input.js';
+import { readInput } from '../../helpers/read-input.js';
 
 const treeGrid = readInput(new URL('day-8-1.txt', import.meta.url))
     .split('\n')

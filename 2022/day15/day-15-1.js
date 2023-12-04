@@ -1,4 +1,4 @@
-import { readInput } from '../helpers/read-input.js';
+import { readInput } from '../../helpers/read-input.js';
 
 const distance = (pos1, pos2) => {
     return (Math.max(pos1.x, pos2.x) - Math.min(pos1.x, pos2.x))

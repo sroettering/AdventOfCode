@@ -1,4 +1,4 @@
-import { readInput } from '../helpers/read-input.js';
+import { readInput } from '../../helpers/read-input.js';
 
 const moves = readInput(new URL('day-9-2.txt', import.meta.url))
     .split('\n')

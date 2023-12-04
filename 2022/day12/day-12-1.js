@@ -1,21 +1,25 @@
-import { readInput } from '../helpers/read-input.js';
+import { readInput } from '../../helpers/read-input.js';
 
+let startNode;
 let endNode;
 
-const heightMap = readInput(new URL('day-12-2.txt', import.meta.url))
+const heightMap = readInput(new URL('day-12-1.txt', import.meta.url))
     .split('\n')
     .filter(line => line !== '')
     .map((row, y) => row.split('').map((char, x) => {
+        const isStart = char === 'S';
         const isEnd = char === 'E';
         const node = {
             x,
             y,
-            height: char === 'S' ? 'a'.charCodeAt(0) : isEnd ? 'z'.charCodeAt(0) : char.charCodeAt(0),
+            height: isStart ? 'a'.charCodeAt(0) : isEnd ? 'z'.charCodeAt(0) : char.charCodeAt(0),
+            isStart,
             isEnd,
-            visited: isEnd,
+            visited: isStart,
             dist: 0,
         };
 
+        if (isStart) startNode = node;
         if (isEnd) endNode = node;
 
         return node;
@@ -31,7 +35,7 @@ const findNeighbours = (node, graph) => {
 
     return [left, right, up, down]
         .filter(Boolean)
-        .filter((neighbour) => height <= neighbour.height + 1)
+        .filter((neighbour) => height + 1 >= neighbour.height)
         .filter(({ visited }) => !visited);
 };
 
@@ -44,12 +48,12 @@ const visualize = (graph) => {
     console.log(str);
 };
 
-const queue = [endNode];
+const queue = [startNode];
 
 while (queue.length) {
     const node = queue.shift();
 
-    if (node.height === 'a'.charCodeAt(0)) {
+    if (node.isEnd) {
         console.log('Found end node at depth', node.dist);
         break;
     }

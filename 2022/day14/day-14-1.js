@@ -1,4 +1,4 @@
-import { readInput } from '../helpers/read-input.js';
+import { readInput } from '../../helpers/read-input.js';
 
 const interpolate = (pos1, pos2) => {
     if (pos1[0] === pos2[0] && pos1[1] === pos2[1]) {
@@ -22,7 +22,7 @@ const interpolate = (pos1, pos2) => {
     }
 };
 
-const rockPaths = readInput(new URL('day-14-2.txt', import.meta.url))
+const rockPaths = readInput(new URL('day-14-1.txt', import.meta.url))
     .split('\n')
     .filter(line => line !== '')
     .map((line) => {
@@ -37,9 +37,9 @@ rockPaths.forEach((rockPath) => {
     }
 });
 
-const floorLine = Math.max(...blockedAir.map(coord => coord[1])) + 2;
+const abyssLine = Math.max(...blockedAir.map(coord => coord[1]));
 
-// console.log(blockedAir);
+console.log(blockedAir);
 
 const isFree = (x, y) => {
     return !blockedAir.find((block) => block[0] === x && block[1] === y);
@@ -48,11 +48,11 @@ const isFree = (x, y) => {
 let numSettled = 0;
 let sandParticle = [500, 0];
 while (true) {
-    if (sandParticle[1] + 1 === floorLine) {
-        blockedAir.push(sandParticle);
-        sandParticle = [500, 0];
-        numSettled++;
-    } else if (isFree(sandParticle[0], sandParticle[1]+1)) {
+    if (sandParticle[1] > abyssLine) {
+        break;
+    }
+
+    if (isFree(sandParticle[0], sandParticle[1]+1)) {
         sandParticle[1]++;
     } else if (isFree(sandParticle[0]-1, sandParticle[1]+1)) {
         sandParticle[0]--;
@@ -61,11 +61,6 @@ while (true) {
         sandParticle[0]++;
         sandParticle[1]++;
     } else {
-        if (sandParticle[1] === 0) {
-            console.log('Settling at 500,0', sandParticle);
-            numSettled++;
-            break;
-        }
         blockedAir.push(sandParticle);
         sandParticle = [500, 0];
         numSettled++;

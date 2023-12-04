@@ -1,4 +1,4 @@
-import { readInput } from '../helpers/read-input.js';
+import { readInput } from '../../helpers/read-input.js';
 
 const regex = new RegExp(/Valve (\w+) has flow rate=(\d+); (?:tunnel|tunnels) lead(?:s)? to valve(?:s)? (\w+(?:, \w+)*)/);
 

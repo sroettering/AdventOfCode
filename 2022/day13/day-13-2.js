@@ -1,4 +1,4 @@
-import { readInput } from '../helpers/read-input.js';
+import { readInput } from '../../helpers/read-input.js';
 
 const packages = readInput(new URL('day-13-2.txt', import.meta.url))
     .split('\n')

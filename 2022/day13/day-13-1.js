@@ -1,4 +1,4 @@
-import { readInput } from '../helpers/read-input.js';
+import { readInput } from '../../helpers/read-input.js';
 
 const pairs = readInput(new URL('day-13-1.txt', import.meta.url))
     .split('\n')
