@@ -82,13 +82,10 @@ while (true) {
             path.loop = detectLoop(path.nodes);
         }
         if (path.loop) {
-            console.log('detected loop in path with length:', path.loop.suffix.length);
+            console.log('detected loop in path with length:', (path.loop.suffix.length + 1) / 4);
             console.log('Encountered a Z node at: ', path.endNodes);
         }
     });
-    if (steps % 100000 === 0) {
-        console.log('steps', steps);
-    }
     patternIndex = (patternIndex + 1) % rlPattern.length;
 }
 console.timeEnd('traversal');
