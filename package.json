@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/sroettering/AdventOfCode2022#readme",
   "dependencies": {
+    "@flatten-js/core": "^1.4.8",
+    "@turf/area": "^6.5.0",
     "@turf/boolean-point-in-polygon": "^6.5.0",
+    "@turf/destination": "^6.5.0",
     "@turf/helpers": "^6.5.0",
     "@turf/intersect": "^5.1.6",
     "@turf/union": "^5.1.5"
