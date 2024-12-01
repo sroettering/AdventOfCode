@@ -2,7 +2,7 @@ import assert from 'node:assert';
 import { lcm } from '../../helpers/math.js';
 import { readInput } from '../../helpers/read-input.js';
 
-const inputLines = readInput(new URL('day-20-1.txt', import.meta.url))
+const inputLines = readInput(new URL('day-20-2.txt', import.meta.url))
     .split('\n')
     .filter(line => line !== '');
 
