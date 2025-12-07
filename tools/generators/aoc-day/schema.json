@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "AocDay",
+  "title": "Advent of Code Day Generator",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "number",
+      "description": "The year (4 digits)",
+      "minimum": 2015,
+      "maximum": 9999,
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "Which year?"
+    },
+    "day": {
+      "type": "number",
+      "description": "The day (1-25)",
+      "minimum": 1,
+      "maximum": 25,
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "Which day?"
+    }
+  },
+  "required": ["year", "day"]
+}
+

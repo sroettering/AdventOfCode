@@ -1,0 +1,12 @@
+{
+  "generators": {
+    "@nx/workspace": {
+      "aoc-day": {
+        "implementation": "./tools/generators/aoc-day/index.js",
+        "schema": "./tools/generators/aoc-day/schema.json",
+        "description": "Generate Advent of Code day files"
+      }
+    }
+  }
+}
+

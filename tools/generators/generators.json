@@ -1,0 +1,12 @@
+{
+  "name": "aoc-generators",
+  "version": "0.0.1",
+  "generators": {
+    "aoc-day": {
+      "factory": "./aoc-day/index",
+      "schema": "./aoc-day/schema.json",
+      "description": "Generate Advent of Code day files"
+    }
+  }
+}
+
